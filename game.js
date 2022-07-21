@@ -30,25 +30,28 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    for (let i = 0; i < 5; i++){
-        //these variables are needed here so they are declared for every round//
-        playerSelection = prompt("Choose Rock, Paper or Scizzors");
-        computerSelection = computerPlay();
-        console.log(playRound(playerSelection, computerSelection));
-    }
-    //this part of the code logs the final score and declares the outcome of the game//
-    if (i = 5 && computerScore > playerScore) {
-        console.log(`Your Score ${playerScore} Computer Score ${computerScore}`)
-        return "Game Over, you have lost"
-    } else if (i = 5 && playerScore > computerScore) {
-        console.log(`Your Score ${playerScore} Computer Score ${computerScore}`)
-        return "Victory, you have beat the computer"
-    } else if (i = 5 && playerScore === computerScore) {
-        console.log(`Your Score ${playerScore} Computer Score ${computerScore}`)
-        return "The game has ended in a stalemate"
-    }
-}
+// function game() {
+//     for (let i = 0; i < 5; i++){
+//         //these variables are needed here so they are declared for every round//
+//         playerSelection = prompt("Choose Rock, Paper or Scizzors");
+//         computerSelection = computerPlay();
+//         console.log(playRound(playerSelection, computerSelection));
+//     }
+//     //this part of the code logs the final score and declares the outcome of the game//
+//     if (i = 5 && computerScore > playerScore) {
+//         console.log(`Your Score ${playerScore} Computer Score ${computerScore}`)
+//         return "Game Over, you have lost"
+//     } else if (i = 5 && playerScore > computerScore) {
+//         console.log(`Your Score ${playerScore} Computer Score ${computerScore}`)
+//         return "Victory, you have beat the computer"
+//     } else if (i = 5 && playerScore === computerScore) {
+//         console.log(`Your Score ${playerScore} Computer Score ${computerScore}`)
+//         return "The game has ended in a stalemate"
+//     }
+// }
 
 //required to actually run the game function//
-console.log(game())
+
+playerSelection = prompt("Choose Rock, Paper or Scizzors");
+computerSelection = computerPlay();
+console.log(playRound(playerSelection, computerSelection));
