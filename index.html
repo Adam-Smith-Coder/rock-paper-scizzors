@@ -4,20 +4,24 @@
         <meta charset="UTF-8">
         <title>Rock Paper Scizzors Game</title>
         <link href="style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fuzzy+Bubbles">
     </head>
-    <body>
-        <h1>Rock Paper Scizzors Game</h1>
+    <body class="main">
+        <div class="title">
+            <h1>Rock Paper Scizzors Game</h1>
+        </div>
         <div class="playerInterface">
-            <h2>Status Screen</h2>
             <div class="scoreboard">
                 <p>Player Score: <span id="pScore">0</span> | Computer Score: <span id="cScore">0</span></p>
             </div>
-            <p>Choose Your Weapon</p>
-            <button class="button" id="rock">Rock</button>
-            <button class="button" id="paper">Paper</button>
-            <button class="button" id="scizzors">Scizzors</button>
+            <p>Make Your Choice</p>
+            <div class="buttons">
+                <button class="button" id="rock">Rock</button>
+                <button class="button" id="paper" style="animation-delay:0.07s">Paper</button>
+                <button class="button" id="scizzors" style="animation-delay:0.14s">Scizzors</button>
+            </div>
         </div>
-        <div>The outcome of the round will be displayed here - <span id="declaration"></span></div>
+        <div class="outcome"><span id="declaration">The outcome of the round will be displayed here</span></div>
         <script src="game.js"></script>
     </body>
 </html>

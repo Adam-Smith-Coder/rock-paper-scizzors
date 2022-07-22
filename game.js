@@ -4,9 +4,9 @@ let cScore = 0;
 
 button.forEach((button) => {
     button.addEventListener("click", function () {
-        const playerSelection = this.textContent.toLowerCase();
+        const playerSelection = this.textContent;
 
-        const choice = ['rock', 'paper', 'scizzors'];
+        const choice = ['Rock', 'Paper', 'Scizzors'];
         const computerSelection = choice[Math.floor(Math.random() * 3)];
 
         playRound(playerSelection, computerSelection);
@@ -22,10 +22,10 @@ function playRound(playerSelection, computerSelection) {
         return;
     } 
 
-    if ((playerSelection === 'rock' && computerSelection === 'scizzors') || (playerSelection === 'paper' && computerSelection === 'rock') || (playerSelection === 'scizzors' && computerSelection === 'paper')) {
+    if ((playerSelection === 'Rock' && computerSelection === 'Scizzors') || (playerSelection === 'Paper' && computerSelection === 'Rock') || (playerSelection === 'Scizzors' && computerSelection === 'Paper')) {
         pScore++;
         document.getElementById("declaration").textContent = `Round Win! ${playerSelection} beats ${computerSelection}`;
-    }  else if ((computerSelection === 'rock' && playerSelection === 'scizzors') || (computerSelection === 'paper' && playerSelection === 'rock') || (computerSelection === 'scizzors' && playerSelection === 'paper')) {
+    }  else if ((computerSelection === 'Rock' && playerSelection === 'Scizzors') || (computerSelection === 'Paper' && playerSelection === 'Rock') || (computerSelection === 'Scizzors' && playerSelection === 'Paper')) {
         cScore++;
         document.getElementById("declaration").textContent = `Round Lose! ${computerSelection} beats ${playerSelection}`;
     } 
