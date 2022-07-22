@@ -1,7 +1,6 @@
-let playerScore = 0
-let computerScore = 0
-
 const button = document.querySelectorAll(".button");
+let pScore = 0;
+let cScore = 0;
 
 button.forEach((button) => {
     button.addEventListener("click", function () {
@@ -11,45 +10,39 @@ button.forEach((button) => {
         const computerSelection = choice[Math.floor(Math.random() * 3)];
 
         playRound(playerSelection, computerSelection);
+        scoreUpdate();
+        gameEndCheck();
     });
 });
 
 function playRound(playerSelection, computerSelection) {
 
     if (playerSelection === computerSelection) {
-        alert (`It's a Tied round, choice was ${playerSelection}`);
+        document.getElementById("declaration").textContent = `It's a Tied round, choice was ${playerSelection}`;
         return;
     } 
 
     if ((playerSelection === 'rock' && computerSelection === 'scizzors') || (playerSelection === 'paper' && computerSelection === 'rock') || (playerSelection === 'scizzors' && computerSelection === 'paper')) {
-        playerScore++;
-        alert (`You Win the round! ${playerSelection} beats ${computerSelection}`);
+        pScore++;
+        document.getElementById("declaration").textContent = `Round Win! ${playerSelection} beats ${computerSelection}`;
     }  else if ((computerSelection === 'rock' && playerSelection === 'scizzors') || (computerSelection === 'paper' && playerSelection === 'rock') || (computerSelection === 'scizzors' && playerSelection === 'paper')) {
-        computerScore++;
-        alert (`You Lose the round! ${computerSelection} beats ${playerSelection}`);
+        cScore++;
+        document.getElementById("declaration").textContent = `Round Lose! ${computerSelection} beats ${playerSelection}`;
     } 
 }
 
-// function game() {
-//     for (let i = 0; i < 10; i++){
-//         //these variables are needed here so they are declared for every round//
-//         playerSelection = prompt("Choose Rock, Paper or Scizzors");
-//         computerSelection = computerPlay();
-//         console.log(playRound(playerSelection, computerSelection));
-//     }
-//     //this part of the code logs the final score and declares the outcome of the game//
-//     if (i = 5 && computerScore > playerScore) {
-//         console.log(`Your Score ${playerScore} Computer Score ${computerScore}`)
-//         return "Game Over, you have lost"
-//     } else if (i = 5 && playerScore > computerScore) {
-//         console.log(`Your Score ${playerScore} Computer Score ${computerScore}`)
-//         return "Victory, you have beat the computer"
-//     } else if (i = 5 && playerScore === computerScore) {
-//         console.log(`Your Score ${playerScore} Computer Score ${computerScore}`)
-//         return "The game has ended in a stalemate"
-//     }
-// }
+function scoreUpdate() {
+    document.getElementById("pScore").textContent = pScore;
+    document.getElementById("cScore").textContent = cScore;
+}
 
-//required to actually run the game function//
-
+function gameEndCheck() {
+    if (pScore === 5) {
+            alert (`Congratulations You Have Beat The Computer, Game will reset`)
+            pScore = cScore = 0;
+    } else if (cScore === 5) {
+            alert (`You Made Poor Choices, The Computer Wins, Game will reset`)
+            pScore = cScore = 0;
+    }
+}
 

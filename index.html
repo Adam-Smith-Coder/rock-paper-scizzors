@@ -5,11 +5,18 @@
         <title>Rock Paper Scizzors Game</title>
     </head>
     <body>
-        <div class ="container">
+        <h1>Rock Paper Scizzors Game</h1>
+        <div class="playerInterface">
+            <h2>Status Screen</h2>
+            <div class="scoreboard">
+                <p>Player Score: <span id="pScore">0</span> | Computer Score: <span id="cScore">0</span></p>
+            </div>
+            <p>Choose Your Weapon</p>
             <button class="button" id="rock">Rock</button>
             <button class="button" id="paper">Paper</button>
             <button class="button" id="scizzors">Scizzors</button>
         </div>
+        <div>The outcome of the round will be displayed here - <span id="declaration"></span></div>
         <script src="game.js"></script>
     </body>
 </html>
