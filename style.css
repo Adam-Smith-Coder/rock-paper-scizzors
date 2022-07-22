@@ -1,3 +1,7 @@
+body {
+    background-color: black;
+}
+
 .main {
     display: flex;
     align-items: center;
@@ -26,7 +30,7 @@
 }
 
 .playerInterface p {
-    font-size: 28px;
+    font-size: 56px;
     margin-bottom: 5px;
 }
 
@@ -37,10 +41,10 @@
 
 .button {
     margin: 20px;
-    width: 160px;
-    height: 160px;
+    width: 200px;
+    height: 200px;
     font-family: "Fuzzy Bubbles", sans-serif;
-    font-size: 18px;
+    font-size: 36px;
     border-radius: 50%;
     border-color: black;
 }
@@ -63,7 +67,14 @@
 }
 
 .outcome,
-.scoreboard p {
-    font-size: 32px;
+.scoreboard p,
+.title h1 {
+    font-size: 64px;
 }
 
+#gameover {
+    text-align: center;
+    font-size: 100px;
+    font-weight: bold;
+    color: red;
+}

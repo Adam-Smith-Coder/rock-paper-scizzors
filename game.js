@@ -38,11 +38,14 @@ function scoreUpdate() {
 
 function gameEndCheck() {
     if (pScore === 5) {
-            alert (`Congratulations You Have Beat The Computer, Game will reset`)
-            pScore = cScore = 0;
+            document.getElementById("gameover").textContent = `Congratulations You Have Beat The Computer, Game will reset`
+            setTimeout(function(){ 
+                document.location.reload();; 
+            }, 5000);
     } else if (cScore === 5) {
-            alert (`You Made Poor Choices, The Computer Wins, Game will reset`)
-            pScore = cScore = 0;
+            document.getElementById("gameover").textContent = `You Made Poor Choices, The Computer Wins, Game will reset`
+            setTimeout(function(){ 
+                document.location.reload();; 
+            }, 5000);
     }
 }
-
